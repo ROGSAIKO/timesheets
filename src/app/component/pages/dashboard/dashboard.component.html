@@ -1,0 +1,135 @@
+<main class="bg-gray-200 ml-70 min-h-[calc(100vh_-_4rem)] py-8 px-4">
+    <div>
+      <div class="m-3 w-40 bg-white rounded p-3">
+        <h2 class="font-bold text-black-xl">Welcome</h2>
+        <span>
+            <h3 class="font-bold text-blue-600">{{currentDay}}</h3>
+        </span>
+        <span class="text-blue-600">{{currentTime}}</span>
+    </div>
+    <div class="m-3 bg-white rounded-lg p-7 addTask justify-items-center">
+        <h1 class="font-bold text-xl text-blue-800">YOUR TIMESHEETS</h1>
+    </div>
+
+      <!-- addTask div -->
+      <div class="m-3 bg-white shadow-md rounded-lg p-7 addTask justify-items-center">
+          <h2 class="m-2 font-bold text-black-xl">Insert record</h2>
+          <form (ngSubmit)="addTask()" #ngForm="ngForm" novalidate>
+              <div class="flex mb-4">
+                  <input type="text" class="w-1/2 h-16 p-4 rounded shadow mr-2" placeholder="Client ID"
+                      [(ngModel)]="formData.clientId" name="clientId" required>
+                  <input type="text" class="w-1/2 h-16 p-4 rounded shadow" placeholder="Project ID"
+                      [(ngModel)]="formData.projectId" name="projectId" required>
+              </div>
+              <div class="flex mb-4">
+                  <input type="date" class="w-1/2 h-16 p-4 rounded shadow mr-2" placeholder="Date"
+                      [(ngModel)]="formData.date" name="date" required>
+                  <input type="text" class="w-1/2 h-16 p-4 rounded shadow" placeholder="Tag"
+                      [(ngModel)]="formData.tag" name="tag" required>
+              </div>
+              <div class="flex mb-4">
+                  <input type="text" class="w-1/2 h-16 p-4 rounded shadow mr-2" placeholder="Remarks"
+                      [(ngModel)]="formData.remarks" name="remarks" required>
+                  <input type="text" class="w-1/2 h-16 p-4 rounded shadow" placeholder="Time Span"
+                      [(ngModel)]="formData.timeSpan" name="timeSpan" required>
+              </div>
+              <div class="flex mb-4">
+              </div>
+              <button type="submit" style="background-color:#333867;"
+                  class="px-4 py-2 bg-blue-500 text-white rounded shadow cursor-pointer"
+                  [disabled]="ngForm.invalid">Submit</button>
+          </form>
+      </div>
+  </div>
+
+  <div class="m-3 bg-white shadow-md rounded-lg p-7 addTask justify-items-center">
+        <div class="flex flex-col mt-6">
+            <h2 class="m-1 font-bold text-xl">Sheets</h2>
+            <table class="border-collapse border border-gray-400 w-full">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="border border-gray-400 p-2">Client ID</th>
+                        <th class="border border-gray-400 p-2">Project ID</th>
+                        <th class="border border-gray-400 p-2">remarks</th>
+                        <th class="border border-gray-400 p-2">timeSpan</th>
+                        <th class="border border-gray-400 p-2">date</th>
+                        <th class="border border-gray-400 p-2">tag</th>
+                        <th class="border border-gray-400 p-2">Actions</th> <!-- Added Actions header -->
+                        <!-- Add more table headers for other fields if needed -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Loop through your taskList and display table rows -->
+                    @for (task of taskList; track task)
+                    {
+                        @if(task.clientId && task.projectId && task.remarks && task.timeSpan && task.date && task.tag)
+                        {
+                            <!-- Use nth-child to style even and odd rows -->
+                            <tr class="bg-white">
+                                <td class="border border-gray-400 p-2" style="text-transform:uppercase;">{{ task.clientId }}</td>
+                                <td class="border border-gray-400 p-2">{{ task.projectId }}</td>
+                                <td class="border border-gray-400 p-2">{{ task.remarks }}</td>
+                                <td class="border border-gray-400 p-2">{{ task.timeSpan }}</td>
+                                <td class="border border-gray-400 p-2">{{ task.date }}</td>
+                                <td class="border border-gray-400 p-2">{{ task.tag }}</td>
+                                <td class="border border-gray-400 p-2">
+                                    <button class="px-2 py-1 bg-blue-500 text-white rounded shadow cursor-pointer mr-2 text-sm"
+                                     style="background-color:#4f579d;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
+                                    <button class="px-2 py-1 bg-red-500 text-white rounded shadow cursor-pointer text-sm" style="background-color:#a21212;" (click)="deleteTask(task)">Delete</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Edit Record</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color:#f6cdbc;"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form (ngSubmit)="editTask(task)" #ngForm="ngForm" novalidate>
+                                        <div class="flex mb-4">
+                                            <input type="text" class="w-1/2 h-16 p-4 rounded shadow mr-2" placeholder="Client ID"
+                                                [(ngModel)]="formData.clientId" name="clientId" required>
+                                            <input type="text" class="w-1/2 h-16 p-4 rounded shadow" placeholder="Project ID"
+                                                [(ngModel)]="formData.projectId" name="projectId" required>
+                                        </div>
+                                        <div class="flex mb-4">
+                                            <input type="date" class="w-1/2 h-16 p-4 rounded shadow mr-2" placeholder="Date"
+                                                [(ngModel)]="formData.date" name="date" required>
+                                            <input type="text" class="w-1/2 h-16 p-4 rounded shadow" placeholder="Tag"
+                                                [(ngModel)]="formData.tag" name="tag" required>
+                                        </div>
+                                        <div class="flex mb-4">
+                                            <input type="text" class="w-1/2 h-16 p-4 rounded shadow mr-2" placeholder="Remarks"
+                                                [(ngModel)]="formData.remarks" name="remarks" required>
+                                            <input type="text" class="w-1/2 h-16 p-4 rounded shadow" placeholder="Time Span"
+                                                [(ngModel)]="formData.timeSpan" name="timeSpan" required>
+                                        </div>
+                                        <div class="flex mb-4">
+                                        </div>
+                                        
+                                <div class="modal-footer">
+                                    <button type="button" class="px-4 py-2 bg-blue-500 text-white rounded shadow cursor-pointer" data-bs-dismiss="modal" style="background-color:#a21212;">Close</button>
+                                    <button type="submit" style="background-color:#333867;"
+                                    class="px-4 py-2 bg-blue-500 text-white rounded shadow cursor-pointer"
+                                    [disabled]="ngForm.invalid">Submit</button>                                
+                                </div>
+                                
+                            </form> 
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                        <!--MODAL END-->
+                        
+                            </td>
+                        </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+<!-- <button class="px-4 py-2 bg-blue-500 text-white rounded shadow cursor-pointer mr-2"
+                                      (click)="editTask(task) -->

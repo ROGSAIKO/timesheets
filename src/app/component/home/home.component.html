@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            text-align: center;
+        }
+        .content {
+            display: inline-block;
+            text-align: center;
+        }
+        .btn-color-dark
+        {
+            background-color:rgb(44, 42, 89);
+            padding: 15px 30px; /* Adjust padding to make the button larger */
+            font-size: 1.2em; /* Increase font size */
+        }
+        .btn-color-light
+        {
+            background-color:rgb(174, 174, 251);
+            padding: 15px 30px; /* Adjust padding to make the button larger */
+            font-size: 1.2em; /* Increase font size */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mt-40">
+        <div class="content">
+            <p class="text-xl" style="font-size: 3.1em;">
+                Tame,Plan,Play<br><br>Organize your Work</p>
+        </div>
+        <div class="mt-4">
+            <p><i>Gather, track, approve your work and tasks all at one place
+                <br>using voyage timesheets
+            </i></p>
+        </div>
+    
+        <div class="mt-5">
+            
+            <a [routerLink]="'/dashboard'" class="btn-color-dark rounded text-white min-w-[320px] py-1.5 lg:py-5 px-10 
+                     undefined" href=""><span class="whitespace-nowrap font-medium 
+                     text-[18px] undefined">Get Started</span>
+            </a>
+            <a [routerLink]="'/register'" class="ml-3 btn-color-light rounded text-black min-w-[320px] py-1.5 lg:py-5 px-10 
+            undefined" href=""><span class="whitespace-nowrap font-medium 
+            text-[18px] undefined">Register</span>
+            </a>
+            
+        </div>
+    </div>
+</body>
+</html>

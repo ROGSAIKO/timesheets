@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <!-- Include Heroicons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@heroicons/vue/outline.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        /* Sidebar width */
+        .sidebar {
+            width: 260px;
+        }
+
+        /* Sidebar animation */
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Adjust navbar height */
+        .navbar {
+            height: 80px; /* Change to desired height */
+            padding-top: 10px; /* Adjust top padding */
+            padding-bottom: 10px; /* Adjust bottom padding */
+            background-color: #333867;
+            background-image: linear-gradient(to right, #333867, #17193b); /* Gradient background */
+
+        }
+
+        .navbar a {
+            line-height: 40px; /* Adjust line height */
+
+        }
+
+        .libre
+        {
+            font-family: "Libre Barcode 128 Text", system-ui;
+            font-weight: 300;
+            font-style:normal;
+            font-size: 50px;
+        }
+        .branding
+        {
+            margin: 0;
+        }
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap" rel="stylesheet">
+</head>
+
+<!-- #333867
+#17193b
+ -->
+
+<body>
+    <nav class="navbar"> 
+        <div class="container-fluid">
+            <!-- Button to open sidebar -->
+            <button data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"
+                class="px-4 py-2 text-white cursor-pointer">
+                <!-- Menu Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+            <!--BRANDING-->
+            <a href="/" class="libre text-white branding">VOYAGE</a>
+            <!-- Sidebar -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-body">
+                    <h3 class="p-2 font-bold text-lg">Voyage</h3>
+                    <ul>
+                        <li class="p-4 cursor-pointer mt-8" [routerLink]="'/'"
+                            routerLinkActive="bg-blue-100 border-1-4 border-blue-500 font-bold"
+                            [routerLinkActiveOptions]="{exact:true}">HOME</li>
+                        <li class="p-4 cursor-pointer" [routerLink]="'/dashboard'"
+                            routerLinkActive="bg-blue-100 border-1-4 border-blue-500 font-bold">TIMESHEET</li>
+                        <li class="p-4 cursor-pointer" [routerLink]="'/auth'"
+                            routerLinkActive="bg-blue-100 border-1-4 border-blue-500 font-bold">ADMIN</li>
+                        <li class="p-4 cursor-pointer" [routerLink]="'/approved-data'"
+                            routerLinkActive="bg-blue-100 border-1-4 border-blue-500 font-bold">APPROVED DATA</li>
+                        <li class="p-4 cursor-pointer" [routerLink]="'/declined-data'"
+                            routerLinkActive="bg-blue-100 border-1-4 border-blue-500 font-bold">DECLINED DATA</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+            <!--SEARCH BAR-->
+            </div>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2 bg-custom-color rounded-md border-none text-white" style="background-color: #020204;" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn" style="background-color:#0f1027; color: white;" type="submit">Search</button>
+              </form>
+        </div>
+    </nav>
+</body>
+
+</html>

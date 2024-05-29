@@ -1,0 +1,106 @@
+{
+  "timesheet_database": [],
+  "approved_tasks": [
+    {
+      "id": "3e49",
+      "clientId": "RBI",
+      "projectId": "4567",
+      "date": "2024-04-28",
+      "tag": "UPI Transfer error",
+      "remarks": "resolved",
+      "timeSpan": "4"
+    },
+    {
+      "id": "4829",
+      "clientId": "CMSS",
+      "projectId": "23451",
+      "date": "2024-04-29",
+      "tag": "UI",
+      "remarks": "Created frontend",
+      "timeSpan": "5"
+    },
+    {
+      "id": "0592",
+      "clientId": "icici",
+      "projectId": "3241",
+      "date": "2024-04-29",
+      "tag": "testing",
+      "remarks": "debugged and reported",
+      "timeSpan": "4"
+    },
+    {
+      "id": "e08a",
+      "clientId": "23451",
+      "projectId": "cmss",
+      "tag": "record-1",
+      "remarks": "resolved",
+      "timeSpan": "8",
+      "date": "2024-05-03"
+    },
+    {
+      "id": "7903",
+      "clientId": "4567",
+      "projectId": "finacle",
+      "date": "2024-05-23",
+      "tag": "prod",
+      "remarks": "server internal error",
+      "timeSpan": "2"
+    },
+    {
+      "id": "21f4",
+      "clientId": "1001",
+      "projectId": "Quiver",
+      "date": "2024-05-24",
+      "tag": "freelance",
+      "remarks": "resolved server issue for 3 projects",
+      "timeSpan": "5"
+    },
+    {
+      "id": "5cf6",
+      "clientId": "6548",
+      "projectId": "RBI",
+      "date": "2024-05-23",
+      "tag": "development",
+      "remarks": "UI Customization",
+      "timeSpan": "4"
+    },
+    {
+      "id": "1b9d",
+      "clientId": "1909",
+      "projectId": "Basix",
+      "date": "2024-05-24",
+      "tag": "deployment",
+      "remarks": "deployed the service on AWS",
+      "timeSpan": "2"
+    }
+  ],
+  "declined_tasks": [
+    {
+      "id": "2218",
+      "clientId": "yes bank",
+      "projectId": "cmss",
+      "tag": "record-1",
+      "remarks": "resolved",
+      "timeSpan": "8",
+      "date": "2024-05-10"
+    },
+    {
+      "id": "9d92",
+      "clientId": "2478",
+      "projectId": "CMSS",
+      "date": "2024-05-24",
+      "tag": "testing",
+      "remarks": "Error in login",
+      "timeSpan": "1"
+    },
+    {
+      "id": "3d78",
+      "clientId": "7488",
+      "projectId": "L&T",
+      "date": "2024-06-01",
+      "tag": "prod",
+      "remarks": "lambda applied to AWS services",
+      "timeSpan": "3"
+    }
+  ]
+}

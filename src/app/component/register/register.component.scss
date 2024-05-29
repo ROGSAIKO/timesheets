@@ -1,0 +1,61 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300);
+* {
+  margin: 0;
+  padding: 0; 
+  }
+
+.form-wrap {
+  background-color: #fff;
+  width: 320px;
+  margin: 3em auto;
+}
+
+.form-wrap form .input 
+  {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    color: inherit;
+    font-family: inherit;
+    padding: .5em 0 8px .8em;
+    border: 1px solid #CFCFCF;
+    outline: 0;
+    width: 304px !important;
+    display: inline-block;
+    margin: 0 0 .8em 0;
+    // padding-right: 2em;
+    width: 100%; 
+}
+.form-wrap form .button 
+{
+    width: 304px;
+    padding: .5em 0 8px .8em;
+    background-color:rgb(52, 48, 110);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase; 
+}
+
+.form-wrap form .button:hover 
+{
+      background-color: rgb(123, 123, 216); 
+}
+
+.form-wrap form .checkbox 
+{
+    visibility: hidden;
+    padding: 20px;
+    margin: .5em 0 1.5em; 
+}
+
+.form-wrap .help-text p 
+{
+    text-align: center;
+    font-size: 14px; 
+}
+
+.terms
+{
+    color: #919191;
+    font-size: 16px;
+}
