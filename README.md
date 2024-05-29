@@ -1,7 +1,7 @@
 # TimeSheets Application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
-The aim of the project was to provide a business group an interface through which they can register track and record their daily tasks and debugs, and also the managers can review and approve or decline their taks. 
+The aim of the project was to provide business groups an interface through which they can register track and record their daily tasks and debugs, and also the managers can review and approve or decline their taks. 
 
 ## Development server
 
